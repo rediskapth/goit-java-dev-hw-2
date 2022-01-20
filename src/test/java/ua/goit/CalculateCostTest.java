@@ -7,6 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CalculateCostTest {
 
     CalculateCost calculateCost = new CalculateCost();
+    // The general idea of unit tests is isolation. If the class named CalculateCostTest we should test only
+    // CalculateCost methods. All dependencies like ProductsRepository we should "mock" with Mockito framework
+    // using when().thenReturn() methods
     ProductsRepository productsRepository = new ProductsRepository();
 
     @Test
@@ -15,6 +18,7 @@ class CalculateCostTest {
     }
 
     @Test
+    // Good job! We should test not only "happy path" but all possible ways
     void testIncorrectEnterValue() {
         double actual = calculateCost.calculateTotalCost("12YT");
         double expected = 0.0;
