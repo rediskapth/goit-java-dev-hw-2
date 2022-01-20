@@ -18,14 +18,14 @@ public class CalculateCost {
                 switch (prod) {
                     case "a" -> {
                         aQuantity++;
-                        sum = calculatePromPrice(products.a, aQuantity, sum);
+                        sum = calculatePromPrice(products.getA(), aQuantity, sum);
                     }
-                    case "b" -> sum += products.b.getPrice();
+                    case "b" -> sum += products.getB().getPrice();
                     case "c" -> {
                         cQuantity++;
-                        sum = calculatePromPrice(products.c, cQuantity, sum);
+                        sum = calculatePromPrice(products.getC(), cQuantity, sum);
                     }
-                    case "d" -> sum += products.d.getPrice();
+                    case "d" -> sum += products.getD().getPrice();
                     default -> System.out.println("Enter correct product. Product '" + prod.toUpperCase() + "' is absent in store.");
                 }
             }
